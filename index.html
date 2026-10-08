@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi tienda</title>
+  <style>
+    ```html
+    <!DOCTYPE html>
+    <html lang="es">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>Tiendita de Peluches 🧸</title>
+
+      <!-- TIPOGRAFÍAS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+
+      <style>
+
+        /* ================================
+           ESTILO GENERAL
+        ================================= */
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          background: #FFF8FB;
+          color: #765665;
+          font-family: "Fredoka", sans-serif;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .header-peluches {
+
+          text-align: center;
+
+          padding: 45px 20px 35px;
+
+          background:
+            radial-gradient(circle at 10% 20%, #FDE2EE 0, transparent 20%),
+            radial-gradient(circle at 90% 20%, #EDE2F8 0, transparent 20%),
+            #FFF0F6;
+
+          border-bottom: 5px solid #F4C5D9;
+
+          border-radius: 0 0 45px 45px;
+
+          box-shadow: 0 8px 20px rgba(210,150,175,0.15);
+        }
+
+
+        /* Decoración */
+
+        .decoracion {
+
+          font-size: 32px;
+
+          letter-spacing: 8px;
+
+          margin-bottom: 12px;
+        }
+
+
+        /* TÍTULO CURSIVO */
+
+        .header-peluches h1 {
+
+          margin: 0 auto 15px;
+
+          text-align: center;
+
+          font-family: "Pacifico", cursive;
+
+          font-size: 48px;
+
+          font-weight: 400;
+
+          color: #D76598;
+
+          text-shadow: 2px 3px 0 #F8D6E4;
+        }
+
+
+        /* SLOGAN */
+
+        .slogan {
+
+          margin: 0 auto 28px;
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 20px;
+
+          color: #8D6676;
+        }
+
+
+        /* ================================
+           BENEFICIOS
+        ================================= */
+
+        .beneficios {
+
+          display: flex;
+
+          justify-content: center;
+
+          align-items: center;
+
+          flex-wrap: wrap;
+
+          gap: 12px;
+        }
+
+
+        .beneficios span {
+
+          background: #FFFFFF;
+
+          color: #A65D7C;
+
+          padding: 10px 18px;
+
+          border-radius: 30px;
+
+          border: 2px solid #F4C9DA;
+
+          box-shadow: 0 4px 10px rgba(210,150,175,0.12);
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 15px;
+        }
+
+
+        /* ================================
+           ZONA DE PRODUCTOS
+        ================================= */
+
+        #productos {
+
+          margin: 30px;
+
+          padding: 35px;
+
+          border-radius: 40px;
+
+          background:
+            radial-gradient(circle at 5% 10%, #FBE4EF 0, transparent 15%),
+            radial-gradient(circle at 95% 90%, #EDE4F7 0, transparent 18%),
+            #FDF2F7;
+
+          display: grid;
+
+          grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+
+          gap: 28px;
+
+          border: 3px solid #F4D3E1;
+        }
+
+
+        /* ================================
+           TARJETAS DE PRODUCTOS
+        ================================= */
+
+        .producto {
+
+          position: relative;
+
+          background: #FFFFFF;
+
+          border-radius: 30px;
+
+          padding: 22px;
+
+          text-align: center;
+
+          /* BORDE CUTE */
+
+          border: 3px solid #F2C6D9;
+
+          box-shadow:
+            0 6px 0 #EFC0D5,
+            0 10px 20px rgba(210,150,175,0.12);
+
+          transition: all 0.25s ease;
+        }
+
+
+        /* Detalle decorativo */
+
+        .producto::before {
+
+          content: "♡";
+
+          position: absolute;
+
+          top: 10px;
+
+          right: 15px;
+
+          font-size: 22px;
+
+          color: #F0B4CC;
+        }
+
+
+        /* Efecto al pasar el mouse */
+
+        .producto:hover {
+
+          transform: translateY(-7px) rotate(-1deg);
+
+          box-shadow:
+            0 9px 0 #E8B3CB,
+            0 15px 25px rgba(210,150,175,0.18);
+        }
+
+
+        /* ================================
+           IMÁGENES
+           TODAS DEL MISMO TAMAÑO
+        ================================= */
+
+        .producto img {
+
+          width: 200px;
+
+          height: 200px;
+
+          object-fit: contain;
+
+          display: block;
+
+          margin: 0 auto 18px;
+
+          padding: 10px;
+
+          background: #FFF8FB;
+
+          border-radius: 25px;
+
+          border: 2px dashed #F3C9D9;
+        }
+
+
+        /* ================================
+           NOMBRE DEL PRODUCTO
+        ================================= */
+
+        .producto h3 {
+
+          margin: 10px 0;
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 22px;
+
+          font-weight: 600;
+
+          color: #C75F8E;
+        }
+
+
+        /* ================================
+           DESCRIPCIÓN
+        ================================= */
+
+        .producto p {
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 15px;
+
+          line-height: 1.5;
+
+          color: #8B6A78;
+        }
+
+
+        /* ================================
+           PRECIO
+        ================================= */
+
+        .producto .precio {
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 22px;
+
+          font-weight: 600;
+
+          color: #B85584;
+
+          margin: 12px 0;
+        }
+
+
+        /* ================================
+           BOTÓN
+        ================================= */
+
+        .producto button {
+
+          border: 3px solid #E9A9C4;
+
+          padding: 11px 22px;
+
+          border-radius: 25px;
+
+          background: #F2B5CD;
+
+          color: white;
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 15px;
+
+          font-weight: 500;
+
+          cursor: pointer;
+
+          box-shadow: 0 3px 0 #D991B0;
+
+          transition: all 0.2s ease;
+        }
+
+
+        .producto button:hover {
+
+          background: #E59BB9;
+
+          transform: translateY(-2px);
+
+          box-shadow: 0 5px 0 #CC819F;
+        }
+
+
+        /* ================================
+           CARRITO
+        ================================= */
+
+        .carrito {
+
+          margin: 30px;
+
+          padding: 30px;
+
+          background: #F9F0FC;
+
+          border-radius: 40px;
+
+          border: 3px solid #E5D3ED;
+
+          box-shadow: 0 7px 0 #DCC8E5;
+        }
+
+
+        .carrito h2 {
+
+          margin-top: 0;
+
+          text-align: center;
+
+          font-family: "Pacifico", cursive;
+
+          font-size: 32px;
+
+          font-weight: 400;
+
+          color: #9971A8;
+        }
+
+
+        .carrito ul {
+
+          list-style: none;
+
+          padding: 0;
+        }
+
+
+        .carrito li {
+
+          background: #FFFFFF;
+
+          margin: 10px 0;
+
+          padding: 14px 17px;
+
+          border-radius: 20px;
+
+          border: 2px solid #EBDCF0;
+
+          font-family: "Fredoka", sans-serif;
+        }
+
+
+        /* ================================
+           TOTAL
+        ================================= */
+
+        .resumen {
+
+          text-align: right;
+
+          margin-top: 20px;
+
+          font-family: "Fredoka", sans-serif;
+        }
+
+
+        .total {
+
+          color: #B85584;
+
+          font-size: 26px !important;
+
+          font-weight: 600;
+        }
+
+
+        /* ================================
+           BOTONES DEL CARRITO
+        ================================= */
+
+        .vaciar,
+        .finalizar {
+
+          border: 2px solid transparent;
+
+          padding: 12px 23px;
+
+          border-radius: 25px;
+
+          font-family: "Fredoka", sans-serif;
+
+          font-size: 15px;
+
+          cursor: pointer;
+
+          margin: 5px;
+
+          transition: 0.2s;
+        }
+
+
+        .vaciar {
+
+          background: #E6D6DF;
+
+          color: #795B69;
+
+          border-color: #D7C3CD;
+        }
+
+
+        .finalizar {
+
+          background: #E9AFC8;
+
+          color: white;
+
+          border-color: #D996B3;
+        }
+
+
+        .vaciar:hover,
+        .finalizar:hover {
+
+          transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           CELULAR
+        ================================= */
+
+        @media (max-width: 600px) {
+
+          .header-peluches h1 {
+            font-size: 35px;
+          }
+
+          .decoracion {
+            font-size: 25px;
+            letter-spacing: 4px;
+          }
+
+          .slogan {
+            font-size: 17px;
+          }
+
+          .beneficios {
+            flex-direction: column;
+          }
+
+          .beneficios span {
+            width: 90%;
+          }
+
+          #productos {
+
+            margin: 15px;
+
+            padding: 20px;
+
+            grid-template-columns: 1fr;
+          }
+
+          .producto img {
+
+            width: 180px;
+
+            height: 180px;
+          }
+
+          .carrito {
+
+            margin: 15px;
+
+            padding: 22px;
+          }
+        }
+
+      </style>
+    </head>
+
+
+    <body>
+
+
+      <!-- HEADER -->
+
+      <header class="header-peluches">
+
+        <div class="decoracion">
+          🧸 ✨ 🐰 💕 🧸
+        </div>
+
+        <h1>
+          🧸 Tiendita de Peluches 🧸
+        </h1>
+
+        <p class="slogan">
+          Peluchitos que llenan tus días de ternura 💕
+        </p>
+
+        <div class="beneficios">
+
+          <span>🚚 Envíos en Bogotá</span>
+
+          <span>💗 Peluches súper tiernos</span>
+
+          <span>📦 Seguimiento de pedido</span>
+
+        </div>
+
+      </header>
+
+
+      <!-- PRODUCTOS -->
+
+      <div id="productos"></div>
+
+
+      <!-- CARRITO -->
+
+      <div class="carrito">
+
+        <h2>
+          🧺 Mi Canastita 💕
+        </h2>
+
+        <ul id="lista-carrito"></ul>
+
+        <div class="resumen">
+
+          <p>
+            Envío:
+            <strong>Gratis 🎀</strong>
+          </p>
+
+          <p class="total">
+            Total: $<span id="total">0</span>
+          </p>
+
+        </div>
+
+        <button
+          class="vaciar"
+          onclick="vaciarCarrito()">
+          🧹 Vaciar Canastita
+        </button>
+
+        <button
+          class="finalizar"
+          onclick="finalizarCompra()">
+          💕 Finalizar Compra
+        </button>
+
+      </div>
+
+    </body>
+
+    </html>
+    ```
+
+  </style>
+</head>
+<body>
+  <header class="header-peluches">
+    <div class="decoracion">🧸 ✨ 🐰 💕 🧸</div>
+
+    <h1>🧸 Tiendita de Peluches</h1>
+
+    <p class="slogan">
+      Peluchitos que llenan tus días de ternura 💕
+    </p>
+
+    <div class="beneficios">
+      <span>🚚 Envíos en Bogotá</span>
+      <span>💗 Peluches súper tiernos</span>
+      <span>📦 Seguimiento de pedido</span>
+    </div>
+  </header>
+
+  <div id="productos"></div>
+
+  <div class="carrito">
+    <h2>🧺 Mi Canastita</h2>
+
+    <ul id="lista-carrito"></ul>
+
+    <div class="resumen">
+      <p>
+        Envío: <strong>Gratis 🎀</strong>
+      </p>
+
+      <p class="total">
+        Total: $<span id="total">0</span>
+      </p>
+    </div>
+
+    <button class="vaciar" onclick="vaciarCarrito()">
+      🧹 Vaciar Canastita
+    </button>
+
+    <button class="finalizar" onclick="finalizarCompra()">
+      💕 Finalizar Compra
+    </button>
+  </div>
+
+  <script>
+    const productos = [
+      {
+        id: 1,
+        nombre: "Stitch",
+        descripcion: "¡Un pedacito de ternura y travesuras para acompañarte siempre!.",
+        precio: 25000,
+        imagen: "https://puntoscolombia.vtexassets.com/arquivos/ids/29401198-1200-auto?v=638783961570600000&width=1200&height=auto&aspect=true"
+      },
+      {
+        id: 2,
+        nombre: "Osito cariñosito (divertosito)",
+        descripcion: "Un abrazo lleno de amor para iluminar tus días.",
+        precio: 18000,
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9dK9MRpkqJaPDB6fnQIY59CZ3jVF5Nar0ROcmH1w7Pvj7n2C_1wSqOwQ&s=10"
+      },
+      {
+        id: 3,
+        nombre: "Lotso",
+        descripcion: "Un poquito de dulzura y mucho amor para acompañarte siempre.",
+        precio: 30000,
+        imagen: "https://distrimedellinn.com/cdn/shop/files/WhatsAppImage2026-06-23at4.01.38PM_3.jpg?v=1782249049"
+      },
+      {
+        id: 4,
+        nombre: "Snoopy",
+        descripcion: "El compañero perfecto para llenar tus días de aventuras y ternura.",
+        precio: 18000,
+        imagen: "https://http2.mlstatic.com/D_NQ_NP_834323-CBT104342140694_012026-O.webp"
+      },
+      {
+        id: 5,
+        nombre: "Pikachu",
+        descripcion: "Pequeño, tierno y lleno de energía para alegrarte cada día.",
+        precio: 22000,
+        imagen: "https://carulla.vtexassets.com/arquivos/ids/26196192/Peluche-Pokemon-20Cm-Surtido-POKEMON-3552039_a.jpg?v=639246791591500000"
+      }
+    ];
+
+
+    /* ==============================
+       CARRITO
+    ================================ */
+
+    const carrito = [];
+
+    const contenedorProductos = document.getElementById("productos");
+    const listaCarrito = document.getElementById("lista-carrito");
+    const totalCarrito = document.getElementById("total");
+
+
+    /* ==============================
+       MOSTRAR PRODUCTOS
+    ================================ */
+
+    function mostrarProductos() {
+
+      contenedorProductos.innerHTML = "";
+
+      productos.forEach(prod => {
+
+        const div = document.createElement("div");
+
+        div.className = "producto";
+
+        div.innerHTML = `
+          <img src="${prod.imagen}" alt="${prod.nombre}">
+
+          <h3>${prod.nombre}</h3>
+
+          <p class="descripcion">
+            ${prod.descripcion}
+          </p>
+
+          <p class="precio">
+            ${prod.precio.toLocaleString("es-CO", {
+              style: "currency",
+              currency: "COP",
+              minimumFractionDigits: 0
+            })}
+          </p>
+
+          <button onclick="agregarAlCarrito(${prod.id})">
+            Agregar al carrito
+          </button>
+        `;
+
+        contenedorProductos.appendChild(div);
+
+      });
+
+    }
+
+
+    /* ==============================
+       AGREGAR AL CARRITO
+    ================================ */
+
+    function agregarAlCarrito(id) {
+
+      const productoExistente =
+        carrito.find(p => p.id === id);
+
+      if (productoExistente) {
+
+        productoExistente.cantidad++;
+
+      } else {
+
+        const producto =
+          productos.find(p => p.id === id);
+
+        carrito.push({
+          ...producto,
+          cantidad: 1
+        });
+
+      }
+
+      actualizarCarrito();
+
+    }
+
+
+    /* ==============================
+       ACTUALIZAR CARRITO
+    ================================ */
+
+    function actualizarCarrito() {
+
+      listaCarrito.innerHTML = "";
+
+      let total = 0;
+      let totalItems = 0;
+
+      carrito.forEach(item => {
+
+        const li =
+          document.createElement("li");
+
+        const subtotal =
+          item.precio * item.cantidad;
+
+        li.textContent =
+          `${item.nombre} x${item.cantidad} — ` +
+          subtotal.toLocaleString("es-CO", {
+            style: "currency",
+            currency: "COP",
+            minimumFractionDigits: 0
+          });
+
+        listaCarrito.appendChild(li);
+
+        total += subtotal;
+        totalItems += item.cantidad;
+
+      });
+
+      totalCarrito.textContent =
+        total.toLocaleString("es-CO");
+
+      actualizarTituloCarrito(totalItems);
+
+    }
+
+
+    /* ==============================
+       CONTADOR DEL CARRITO
+    ================================ */
+
+    function actualizarTituloCarrito(cantidad) {
+
+      const titulo =
+        document.querySelector(".carrito h2");
+
+      titulo.textContent =
+        `🧾 Carrito de Compras (${cantidad})`;
+
+    }
+
+
+    /* ==============================
+       VACIAR CARRITO
+    ================================ */
+
+    function vaciarCarrito() {
+
+      if (carrito.length === 0) {
+
+        alert("🛒 El carrito ya está vacío.");
+
+        return;
+
+      }
+
+      if (
+        confirm(
+          "¿Estás seguro de que quieres vaciar el carrito?"
+        )
+      ) {
+
+        carrito.length = 0;
+
+        actualizarCarrito();
+
+      }
+
+    }
+
+
+    /* ==============================
+       FINALIZAR COMPRA
+    ================================ */
+
+    function finalizarCompra() {
+
+      if (carrito.length === 0) {
+
+        alert(
+          "🛒 Tu carrito está vacío. Agrega productos antes de finalizar la compra."
+        );
+
+        return;
+
+      }
+
+      alert(
+        "🎉 ¡Pedido simulado confirmado!\n\n" +
+        "En un eCommerce real, ahora entrarían en acción " +
+        "el backend, la pasarela de pago y la logística."
+      );
+
+      carrito.length = 0;
+
+      actualizarCarrito();
+
+    }
+
+
+    /* ==============================
+       INICIAR TIENDA
+    ================================ */
+
+    mostrarProductos();
+  </script>
+</body>
+</html>
